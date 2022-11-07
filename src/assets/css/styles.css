@@ -1,0 +1,618 @@
+@font-face {
+    font-family: 'abraham_stampstamp';
+    src: url('./fonts/fontsfree-net-6abrahamstamp-webfont.woff2') format('woff2'),
+        url('./fonts/fontsfree-net-6abrahamstamp-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'parsley_sauce_demoregular';
+    src: url('./fonts/parsleysaucedemoregular-webfont.woff2') format('woff2'),
+        url('./fonts/parsleysaucedemoregular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'visby_cfbold';
+    src: url('./fonts/visbycf-bold-webfont.woff2') format('woff2'),
+        url('./fonts/visbycf-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'visby_cfbold_oblique';
+    src: url('./fonts/visbycf-boldoblique-webfont.woff2') format('woff2'),
+        url('./fonts/visbycf-boldoblique-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'visby_cfheavy';
+    src: url('./fonts/visbycf-heavy-webfont.woff2') format('woff2'),
+        url('./fonts/visbycf-heavy-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*defaults*/
+:root{
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    
+}
+
+app-home,
+app-formulario,
+app-ruleta,
+app-condiciones {
+    width: 100%;
+    height: 100%;
+}
+
+section {
+    width: 100%;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    align-content: center;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.a-center {
+    align-items: center;
+}
+
+.j-center {
+    justify-content: center;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.ps-20 {
+    padding: 0 20px;
+}
+
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+@media only screen and (max-width: 600px) {
+    .row {
+        flex-wrap: wrap;
+    }
+}
+
+/*fondos*/
+.estadio-template {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    background-image: url(../images/app-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+    height: 100%;
+}
+
+@media only screen and (min-width: 1280px) {}
+
+@media only screen and (max-width: 600px) {
+    .estadio-template {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        background-image: url(../images/app-bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+/*botones*/
+.btn-1 {
+    display: block;
+    font-family: 'visby_cfbold';
+    padding: 10px 40px;
+    border: solid 4px #ffcf00;
+    color: #ffcf00;
+    text-align: center;
+    width: fit-content;
+    text-decoration: none;
+    font-size: 25px;
+    background-color: #17264a;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.btn-1:hover {
+    transform: scale(1.1);
+}
+
+.btn-2 {
+    display: block;
+    font-family: 'visby_cfbold';
+    padding: 10px 40px;
+    border: solid 4px #17264a !important;
+    color: #17264a !important;
+    text-align: center;
+    width: fit-content;
+    text-decoration: none;
+    font-size: 25px;
+    background-color: #ffcf00 !important;
+    font-family: sans-serif;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.btn-2:hover {
+    background-color: #ffe364 !important;
+}
+
+/*home*/
+.logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ruleta-premios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 -20px 0 0;
+}
+
+.ruleta-glow {
+    max-width: 1120px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.ruleta-home {
+    z-index: 2;
+    order: 2;
+    position: relative;
+}
+
+.glow-ruleta-home {
+    z-index: 0;
+    order: 1;
+    mix-blend-mode: screen;
+    width: 120% !important;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: -72px;
+    right: 0;
+    text-align: center;
+    top: -12%;
+}
+
+.logo-promo {
+    max-width: 799px;
+    width: 100%;
+}
+
+.logo-promo img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.ruleta-glow {
+    max-width: 1120px;
+    width: 100%;
+}
+
+.ruleta-glow img {
+    width: 125%;
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 600px) {
+    .logo-promo {
+        max-width: 799px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 0 0 0;
+    }
+
+    .logo-promo img {
+        width: 90%;
+        object-fit: contain;
+        margin-left: -30px;
+        margin-bottom: 20px;
+    }
+
+    .ruleta-premios {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 50px -20px 0 -20px;
+    }
+
+    .form-group2 {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap !important;
+    }
+
+    .form-group2 input {
+        width: 100% !important;
+    }
+}
+
+/*formulario*/
+.glow-form-bg {
+    mix-blend-mode: screen;
+    position: absolute;
+    z-index: 0;
+    animation: flickerAnimation 3000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.form-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.form-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    z-index: 1;
+}
+
+.img-reg {
+    width: 100%;
+    max-width: 424px;
+}
+
+.img-logo {
+    margin: 0 0px 15px -43px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    width: 100%;
+    align-items: center;
+    padding: 25px;
+    z-index: 1;
+}
+
+.form-group {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.form-group2 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.form-group2 input {
+    width: 50%;
+}
+
+.formulario input {
+    font-family: 'visby_cfbold';
+    display: block;
+    padding: 10px;
+    border: solid 4px #ffcf00;
+    color: #ffcf00;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: #17264a;
+    border-radius: 10px;
+    width: 100%;
+    margin: 5px;
+}
+
+.formulario input::placeholder {
+    color: #ffcf00;
+}
+
+@media only screen and (max-width: 600px) {
+    .form-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+    .form-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        z-index: 1;
+        padding: 50px 0 0 0;
+    }
+
+    .img-reg {
+        width: 80%;
+        max-width: 424px;
+    }
+
+    .formulario {
+        display: flex;
+        flex-direction: column;
+        max-width: 600px;
+        width: 100%;
+        align-items: center;
+        padding: 20px 25px 80px 25px;
+        z-index: 1;
+    }
+
+    .form-group2 {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap !important;
+    }
+
+    .form-group2 input {
+        width: 100% !important;
+    }
+}
+
+/*ruleta*/
+.estadio-luces{
+    background-image: url(../images/fondo.jpg);
+    background-position: center top;
+    background-size: cover;
+}
+.logo-game {
+    max-width: 799px;
+    width: 100%;
+}
+
+.logo-game img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.ruleta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 -20px 0 0;
+    position: relative;
+}
+
+.spin-ruleta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.arrow {
+    position: absolute;
+    top: 9%;
+    width: 8%;
+    z-index: 3;
+}
+
+.ruleta-game-cont {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.ruleta {
+    width: 100%;
+    z-index: 1;
+    animation: spin 7000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.ruleta-luces {
+    width: 100%;
+    position: absolute;
+    mix-blend-mode: screen;
+    z-index: 2;
+    animation: flickerAnimation 1000ms, spin 7000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes flickerAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes flickerAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes flickerAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes flickerAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.bottom-btn {
+    position: absolute;
+    bottom: 9%;
+    z-index: 3;
+}
+
+.img-tuleta-glow {
+    position: absolute;
+}
+.glow-ruleta-game {
+    z-index: 0;
+    order: 1;
+    mix-blend-mode: screen;
+    width: 159% !important;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: -35%;
+    right: 0;
+    text-align: center;
+}
+/*condiciones*/
+.estadio-fondo-2{
+    background-image: url(../images/fondo-2.jpg);
+    background-position: center top;
+    background-size: cover;
+}
+.condiciones-cont{
+    color: white;
+    max-width: 1250px;
+    padding: 50px;
+}
+.condiciones-cont h1{
+    font-family: 'abraham_stampstamp';
+    color: white;
+    font-size: 130px;
+    font-weight: 100;
+    text-align: center;
+    line-height: 90px;
+    margin: 0;
+}
+.top-titulo{
+    font-size: 100px;
+}
+.condiciones-cont p{
+    font-family: 'visby_cfbold';
+    color: white;
+    font-size: 30px;
+}
+.texto-amarillo{
+    color: #ffdd40;
+}
+@media only screen and (max-width: 600px) {
+    .condiciones-cont{
+        color: white;
+        max-width: 1250px;
+        padding: 25px;
+    }
+    .condiciones-cont h1{
+        font-family: 'abraham_stampstamp';
+        color: white;
+        font-size: 54px;
+        font-weight: 100;
+        text-align: center;
+        line-height: 45px;
+        margin: 0;
+    }
+    .top-titulo{
+        font-size: 50px;
+    }
+    .condiciones-cont p{
+        font-family: 'visby_cfbold';
+        color: white;
+        font-size: 15px;
+    }
+}
