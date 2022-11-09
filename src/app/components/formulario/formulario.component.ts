@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario',
@@ -8,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class FormularioComponent implements OnInit {
   public user: any;
 
-  constructor() {
+  constructor(
+    private router: Router,
+
+  ) {
 
     this.user = {
       nombre: '',
@@ -16,7 +20,8 @@ export class FormularioComponent implements OnInit {
       correo: '',
       telefono: '',
       autorizacion: '',
-      cajero: ''
+      cajero: '',
+      file: ''
     };
 
    }
@@ -25,7 +30,7 @@ export class FormularioComponent implements OnInit {
   }
 
   onSubmit(){
-    alert("Formulario Enviado");
+    this.router.navigate([`./ruleta`]);
     console.log(this.user);
   }
 

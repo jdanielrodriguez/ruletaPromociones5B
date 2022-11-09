@@ -1,19 +1,21 @@
 <section class="content estadio-luces">
-    <div class="row ps-20 a-center j-center">
-        <div class="logo-section a-center">
-            <div class="logo-game">
-                <a [routerLink]="['/']"><img src="../../../assets/images/logo-login.png" alt=""></a>
-            </div>
-            
-        </div>
-        <div class="ruleta-container">
-            <div class="spin-ruleta">
-                    <img class="ruleta-luces" src="../../../assets/images/ruleta-luces.png" alt="">
-                    <img class="ruleta spin-animation" src="../../../assets/images/rueda.png" alt="">
-                <img class="arrow" src="../../../assets/images/arrow.png" alt="">
-                <img class="glow-ruleta-game" src="../../../assets/images/luces.png" alt="">
-            </div>
-            <a [routerLink]="['/registro']" class="btn-1 bottom-btn">Iniciar juego</a>
-        </div>
+  <div class="row ps-20 a-center j-center">
+    <div class="logo-section a-center">
+      <div class="logo-game">
+        <a [routerLink]="['/']"><img src="../../../assets/images/logo-login.png" alt=""></a>
+      </div>
+
     </div>
+    <div class="ruleta-container">
+      <div class="spin-ruleta">
+        <img [ngClass]="{'animate': isAnimate()}" class="ruleta-luces" src="../../../assets/images/ruleta-luces.png"
+          alt="">
+        <img [ngClass]="{'animate': isAnimate()}" class="ruleta spin-animation" src="../../../assets/images/rueda.png"
+          alt="">
+        <img class="arrow" src="../../../assets/images/arrow.png" alt="">
+        <img class="glow-ruleta-game" src="../../../assets/images/luces.png" alt="">
+      </div>
+      <a (click)="iniciarJuego()" class="btn-1 bottom-btn">Iniciar juego</a>
+    </div>
+  </div>
 </section>
