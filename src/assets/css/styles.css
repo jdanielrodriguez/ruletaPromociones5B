@@ -686,7 +686,7 @@ input {
 
 @keyframes animateback {
   from {top: 0; opacity: 1}
-  top {top: -300px; opacity: 0}
+  to {top: -300px; opacity: 0}
 }
 /* Modal Content/Box */
 .modal-body {
