@@ -10,8 +10,7 @@ declare var $: any
 export class AppComponent {
   title = 'ruleta5b';
   closeResult = '';
-  private modalService!: NgbModal;
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   open(content: any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', fullscreen: 'modal-fullscreen-xl-down' }).result.then(
