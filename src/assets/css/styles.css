@@ -597,7 +597,9 @@ input {
 
 /*condiciones*/
 .estadio-fondo-2 {
-  background-image: url(../images/fondo-2.jpg);
+  /* background-image: url(../images/fondo-2.jpg); */
+  background-color: rgba(0,24,115,0.5);
+  border-radius: 15px;
   background-position: center top;
   background-size: cover;
 }
@@ -690,8 +692,9 @@ input {
 }
 /* Modal Content/Box */
 .modal-body {
-  background-color: #fefefe;
+  background-color: rgba(0,24,115,0.8);
   padding: 0px 20px 20px 20px;
+  border-radius: 15px;
   border: 1px solid #888;
   margin: auto;
   z-index: 99;
@@ -710,7 +713,7 @@ input {
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: #ffffff;
   text-decoration: none;
   cursor: pointer;
 }
