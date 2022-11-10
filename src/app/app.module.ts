@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { routing, appRoutingProviders } from './app.routing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
@@ -12,6 +13,8 @@ import { FormularioComponent } from './components/formulario/formulario.componen
 import { RuletaComponent } from './components/ruleta/ruleta.component';
 import { WinnerComponent } from './components/winner/winner.component';
 import { CondicionesComponent } from './components/condiciones/condiciones.component';
+
+import { PlayServiceService } from './services/play-service.service';
 
 @NgModule({
   declarations: [
@@ -28,9 +31,13 @@ import { CondicionesComponent } from './components/condiciones/condiciones.compo
     BrowserModule,
     routing,
     BrowserAnimationsModule,
+    HttpClientModule,
     FormsModule
   ],
-  providers: [appRoutingProviders],
+  providers: [
+    appRoutingProviders,
+    PlayServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
