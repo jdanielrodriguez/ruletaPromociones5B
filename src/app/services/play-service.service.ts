@@ -22,7 +22,7 @@ export class PlayServiceService {
       this.token = environment.token
     }
     this.headers.append('Content-Type', 'application/json');
-    this.headers.append('Authorization', 'Bearer ' + this.token);
+    // this.headers.append('Authorization', 'Bearer ' + this.token);
   }
 
   private handleError(error: any): Promise<any> {
@@ -44,7 +44,7 @@ export class PlayServiceService {
 
   play(form: any): Promise<any> {
     let url = `${this.basePath}/api/play`
-    return this.http.post(url, form, { headers: this.headers })
+    return this.http.post(url, form)
       .toPromise()
       .then((response: any) => {
         //console.log(response.json())
