@@ -15,31 +15,24 @@ export class HomeComponent implements OnInit {
 
   customOptions: OwlOptions = {
     loop: true,
+    mouseDrag: true,
     autoplay:true,
-    dots: false,
-    startPosition: 0,
-    navText: ['', ''],
-    slideTransition: 'linear',
-    autoplayTimeout: 100,
-    autoplaySpeed: 3000,
-    autoplayHoverPause: false,
-    mouseDrag: false,
+    touchDrag: true,
     pullDrag: false,
-    freeDrag: false,
-    rewind: false,
-    animateOut: 'backOutLeft',
-    animateIn: 'backInRight',
+    dots: false,
+    navSpeed: 700,
+    navText: ['', ''],
     responsive: {
       0: {
-        items: 1
-      },
-      400: {
-        items: 2
-      },
-      740: {
         items: 3
       },
-      1920: {
+      400: {
+        items: 3
+      },
+      740: {
+        items: 4
+      },
+      940: {
         items: 7
       }
     },
