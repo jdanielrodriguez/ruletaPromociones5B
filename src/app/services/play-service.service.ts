@@ -49,7 +49,7 @@ export class PlayServiceService {
         .toPromise();
       return response;
     } catch (error) {
-      return this.handleError(error);
+      return error;
     }
   }
 

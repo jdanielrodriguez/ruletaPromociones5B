@@ -20,12 +20,18 @@
   </div>
 </section>
 <ng-template #winner let-modal>
-  <div class="modal-body" *ngIf="premio">
-    <span class="close" (click)="close(winner);">&times;</span>
+  <div class="modal-body premio" *ngIf="premio">
     <div class="img_container">
       <div>
-        <img *ngIf="premio.winObj" [src]="premio.winObj.img" alt="">
         <img *ngIf="!premio.winObj" [src]="premio.winObj.img" alt="">
+        <app-gracias *ngIf="premio.winObj"></app-gracias>
+      </div>
+    </div>
+  </div>
+  <div class="modal-body premio" *ngIf="!premio">
+    <div class="img_container">
+      <div>
+        <app-gracias></app-gracias>
       </div>
     </div>
   </div>

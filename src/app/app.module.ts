@@ -16,6 +16,7 @@ import { CondicionesComponent } from './components/condiciones/condiciones.compo
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import { PlayServiceService } from './services/play-service.service';
+import { GraciasComponent } from './components/gracias/gracias.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PlayServiceService } from './services/play-service.service';
     FormularioComponent,
     RuletaComponent,
     WinnerComponent,
-    CondicionesComponent, 
+    CondicionesComponent,
+    GraciasComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,7 @@ import { PlayServiceService } from './services/play-service.service';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    CarouselModule 
+    CarouselModule
   ],
   providers: [
     appRoutingProviders,
