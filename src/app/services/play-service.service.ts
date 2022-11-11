@@ -42,10 +42,10 @@ export class PlayServiceService {
     }
   }
 
-  async play(form: any): Promise<any> {
-    let url = `${this.basePath}/api/play`
+  async play(id: number): Promise<any> {
+    let url = `${this.basePath}/api/play/${id}`
     try {
-      const response = await this.http.post(url, form)
+      const response = await this.http.get(url)
         .toPromise();
       return response;
     } catch (error) {

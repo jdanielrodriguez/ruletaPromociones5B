@@ -8,14 +8,14 @@
     </div>
     <div class="ruleta-container">
       <div class="spin-ruleta">
-        <img [ngClass]="{'animate': isAnimate()}" class="ruleta-luces" src="../../../assets/images/ruleta-luces.png"
+        <img [ngClass]="{'animate': isAnimate(), 'animate_fast': isAnimateFast()}" class="ruleta-luces" src="../../../assets/images/ruleta-luces.png"
           alt="">
-        <img [ngClass]="{'animate': isAnimate()}" class="ruleta spin-animation" src="../../../assets/images/rueda.png"
+        <img [ngClass]="{'animate': isAnimate(), 'animate_fast': isAnimateFast()}" class="ruleta spin-animation" [src]="getRuleta"
           alt="">
         <img class="arrow" src="../../../assets/images/arrow.png" alt="">
         <img class="glow-ruleta-game" src="../../../assets/images/luces.png" alt="">
       </div>
-      <a (click)="iniciarJuego()" class="btn-1 bottom-btn">Iniciar juego</a>
+      <a *ngIf="!isAnimate() && !isAnimateFast()" (click)="iniciarJuego()" class="btn-1 bottom-btn">Iniciar juego</a>
     </div>
   </div>
 </section>

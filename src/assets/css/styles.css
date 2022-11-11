@@ -562,6 +562,12 @@ input {
   animation-timing-function: linear;
 }
 
+.ruleta.animate_fast, .ruleta-luces.animate_fast {
+  animation: spin 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -787,7 +793,7 @@ input {
   color: rgb(1 33 72);
   float: right;
   position: absolute;
-  right: 1%;
+  right: 5%;
   top: 1%;
   font-size: 53px;
   font-weight: bold;
