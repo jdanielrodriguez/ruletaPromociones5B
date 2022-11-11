@@ -13,6 +13,7 @@ import { FormularioComponent } from './components/formulario/formulario.componen
 import { RuletaComponent } from './components/ruleta/ruleta.component';
 import { WinnerComponent } from './components/winner/winner.component';
 import { CondicionesComponent } from './components/condiciones/condiciones.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import { PlayServiceService } from './services/play-service.service';
 
@@ -25,14 +26,15 @@ import { PlayServiceService } from './services/play-service.service';
     FormularioComponent,
     RuletaComponent,
     WinnerComponent,
-    CondicionesComponent,
+    CondicionesComponent, 
   ],
   imports: [
     BrowserModule,
     routing,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CarouselModule 
   ],
   providers: [
     appRoutingProviders,
