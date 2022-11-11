@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-declare var $: any
 
 @Component({
   selector: 'app-root',

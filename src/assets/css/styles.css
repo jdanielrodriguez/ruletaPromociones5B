@@ -696,7 +696,23 @@ input {
   color: #ffdd40;
 }
 
+.img_container>div>img {
+  width: auto;
+  height: 100%;
+  max-height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media only screen and (max-width: 600px) {
+
+  .img_container>div>img {
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .condiciones-cont {
     color: white;
     max-width: 1250px;
@@ -808,4 +824,19 @@ input {
   color: #ffffff;
   text-decoration: none;
   cursor: pointer;
+}
+
+.img_container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-content: space-between;
+  height: 100vh;
+}
+
+.img_container>div {
+  display: flex;
+  margin: auto;
+  width: 100%;
+  max-height: 100vh;
 }

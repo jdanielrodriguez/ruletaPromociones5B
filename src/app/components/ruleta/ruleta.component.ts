@@ -1,23 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PlayServiceService } from './../../services/play-service.service';
-
 @Component({
   selector: 'app-ruleta',
   templateUrl: './ruleta.component.html',
   styleUrls: ['./ruleta.component.css']
 })
 export class RuletaComponent implements OnInit {
-
+  closeResult = '';
   constructor(
     private route: ActivatedRoute,
-    private playServices: PlayServiceService
+    private playServices: PlayServiceService,
+    private modalService: NgbModal
   ) { }
 
   private animateRuleta = false;
   private animateRuletaFast = false;
+  private _customTemplate!: any;
+  private _response!: any;
   private moveId: number = 0;
+  @ViewChild('winner')// customTemplate!: Winner;
+  set customTemplate(v: any) {
+    this._customTemplate = v;
+  }
 
+  get premio() {
+    return this._response ? this._response.obj : null;
+  }
   ngOnInit(): void {
     const moveId = this.route.snapshot.params['move_id'];
     if (moveId) {
@@ -33,12 +43,39 @@ export class RuletaComponent implements OnInit {
           this.setAnimateFast();
           setTimeout(() => {
             this.setAnimateFast();
-            console.log(response);
+            // console.log(response);
+            this._response = response;
+            this.open(this._customTemplate)
           }, 5000)
         }).catch((error: any) => {
           console.log(error);
         })
       }, 2000);
+    }
+  }
+  open(content: any) {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', fullscreen: 'modal-fullscreen-xl-down' }).result.then(
+      (result: any) => {
+        this.closeResult = `Closed with: ${result}`;
+      },
+      (reason: any) => {
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      },
+    );
+    // console.log(this.closeResult);
+  }
+
+  close(content: any) {
+    this.modalService.dismissAll();
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
     }
   }
   isAnimate() {
