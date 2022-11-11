@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-
+import { PlayService } from './services/play-service.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +9,10 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 export class AppComponent {
   title = 'ruleta5b';
   closeResult = '';
-  constructor(private modalService: NgbModal) { }
+  constructor(
+    private modalService: NgbModal,
+    private playService: PlayService
+    ) { }
 
   open(content: any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', fullscreen: 'modal-fullscreen-xl-down' }).result.then(
@@ -25,6 +28,10 @@ export class AppComponent {
 
   close(content: any) {
     this.modalService.dismissAll();
+  }
+
+  get isPowerOn() {
+    return this.playService.isPowerOn();
   }
 
   private getDismissReason(reason: any): string {

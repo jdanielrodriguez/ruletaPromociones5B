@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 @Injectable({
   providedIn: 'root'
 })
-export class PlayServiceService {
+export class PlayService {
 
   headers = new HttpHeaders({
     'Content-Type': 'application/json; charset=UTF-8'
@@ -13,6 +13,7 @@ export class PlayServiceService {
   private basePath: string = environment.urlBase
 
   private token = '';
+  private powerOn = false;
 
   constructor(private http: HttpClient) {
     let datos = localStorage.getItem('token');
@@ -62,5 +63,13 @@ export class PlayServiceService {
     } catch (error) {
       return this.handleError(error);
     }
+  }
+
+  isPowerOn(){
+    return this.powerOn;
+  }
+
+  setPowerOn(value: boolean){
+    this.powerOn = value;
   }
 }

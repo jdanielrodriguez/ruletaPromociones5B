@@ -15,7 +15,7 @@ import { WinnerComponent } from './components/winner/winner.component';
 import { CondicionesComponent } from './components/condiciones/condiciones.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
-import { PlayServiceService } from './services/play-service.service';
+import { PlayService } from './services/play-service.service';
 import { GraciasComponent } from './components/gracias/gracias.component';
 
 @NgModule({
@@ -40,7 +40,7 @@ import { GraciasComponent } from './components/gracias/gracias.component';
   ],
   providers: [
     appRoutingProviders,
-    PlayServiceService
+    PlayService
   ],
   bootstrap: [AppComponent]
 })

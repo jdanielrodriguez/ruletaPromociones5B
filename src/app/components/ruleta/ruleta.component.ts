@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { PlayServiceService } from './../../services/play-service.service';
+import { PlayService } from './../../services/play-service.service';
 @Component({
   selector: 'app-ruleta',
   templateUrl: './ruleta.component.html',
@@ -11,9 +11,12 @@ export class RuletaComponent implements OnInit {
   closeResult = '';
   constructor(
     private route: ActivatedRoute,
-    private playServices: PlayServiceService,
+    private playServices: PlayService,
     private modalService: NgbModal
-  ) { }
+  ) {
+    this.playServices.setPowerOn(true);
+
+  }
 
   private animateRuleta = false;
   private animateRuletaFast = false;
@@ -38,12 +41,12 @@ export class RuletaComponent implements OnInit {
     this.setAnimate();
     if (this.moveId) {
       setTimeout(() => {
-        // console.log(this.moveId);
+        console.log(this.moveId);
         this.playServices.play(this.moveId).then((response: any) => {
           this.setAnimateFast();
           setTimeout(() => {
             this.setAnimateFast();
-            // console.log(response);
+            console.log(response);
             this._response = response;
             this.open(this._customTemplate)
           }, 5000)
@@ -71,7 +74,7 @@ export class RuletaComponent implements OnInit {
         this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
       },
     );
-    // console.log(this.closeResult);
+    console.log(this.closeResult);
   }
 
   close(content: any) {

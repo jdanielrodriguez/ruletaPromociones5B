@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PlayServiceService } from './../../services/play-service.service';
+import { PlayService } from './../../services/play-service.service';
 export type userType = {
   nombre: string;
   dpi: string;
@@ -20,7 +20,7 @@ export class FormularioComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private playServices: PlayServiceService
+    private playServices: PlayService
 
   ) {
 
