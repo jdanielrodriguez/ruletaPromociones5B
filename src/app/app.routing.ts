@@ -14,7 +14,7 @@ const appRoutes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'home', component: HomeComponent},
     {path: 'registro', component: FormularioComponent},
-    {path: 'ruleta', component: RuletaComponent},
+    {path: 'ruleta/:move_id', component: RuletaComponent},
     {path: 'ganador', component: WinnerComponent},
     {path: 'condiciones', component: CondicionesComponent}
 ];

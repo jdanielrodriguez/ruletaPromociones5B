@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PlayServiceService } from './../../services/play-service.service';
-type userType = {
+export type userType = {
   nombre: string;
   dpi: string;
   correo: string;
@@ -39,12 +39,9 @@ export class FormularioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(form: any) {
-    console.log(this.user);
-    console.log(form.value);
+  onSubmit() {
     this.playServices.register(this.user).then((response: any) => {
-      console.log(response);
-      this.router.navigate([`./ruleta`]);
+      this.router.navigate([`./ruleta/${response.obj.move_id}`]);
     }).catch((error: any) => {
       console.log(error)
     })

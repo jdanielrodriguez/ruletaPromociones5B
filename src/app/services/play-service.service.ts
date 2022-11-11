@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 export class PlayServiceService {
 
   headers = new HttpHeaders({
-    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+    'Content-Type': 'application/json; charset=UTF-8'
   })
   private basePath: string = environment.urlBase
 
@@ -31,25 +31,36 @@ export class PlayServiceService {
     return Promise.reject(error.message || error)
   }
 
-  register(form: any): Promise<any> {
+  async register(form: any): Promise<any> {
     let url = `${this.basePath}/api/register`
-    return this.http.post(url, form, { headers: this.headers })
-      .toPromise()
-      .then((response: any) => {
-        //console.log(response.json())
-        return response.json()
-      })
-      .catch(this.handleError)
+    try {
+      const response = await this.http.post(url, form, { headers: this.headers })
+        .toPromise();
+      return response;
+    } catch (error) {
+      return this.handleError(error);
+    }
   }
 
-  play(form: any): Promise<any> {
+  async play(form: any): Promise<any> {
     let url = `${this.basePath}/api/play`
-    return this.http.post(url, form)
-      .toPromise()
-      .then((response: any) => {
-        //console.log(response.json())
-        return response.json()
-      })
-      .catch(this.handleError)
+    try {
+      const response = await this.http.post(url, form)
+        .toPromise();
+      return response;
+    } catch (error) {
+      return this.handleError(error);
+    }
+  }
+
+  async getDepartaments(): Promise<any> {
+    let url = `${this.basePath}/api/departments`
+    try {
+      const response = await this.http.get(url)
+        .toPromise();
+      return response;
+    } catch (error) {
+      return this.handleError(error);
+    }
   }
 }
