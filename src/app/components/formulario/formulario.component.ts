@@ -23,7 +23,7 @@ export class FormularioComponent implements OnInit {
     private playServices: PlayService
 
   ) {
-
+    this.playServices.setPowerOn(false);
     this.user = {
       nombre: '',
       dpi: '',
@@ -33,7 +33,6 @@ export class FormularioComponent implements OnInit {
       cajero: '',
       file: ''
     };
-
   }
 
   ngOnInit(): void {

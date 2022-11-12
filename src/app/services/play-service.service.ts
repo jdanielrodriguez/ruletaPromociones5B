@@ -1,6 +1,6 @@
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from '@angular/core';
 import { environment } from './../../environments/environment';
-import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -65,11 +65,11 @@ export class PlayService {
     }
   }
 
-  isPowerOn(){
+  isPowerOn() {
     return this.powerOn;
   }
 
-  setPowerOn(value: boolean){
+  setPowerOn(value: boolean) {
     this.powerOn = value;
   }
 }

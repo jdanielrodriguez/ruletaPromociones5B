@@ -15,7 +15,6 @@ export class RuletaComponent implements OnInit {
     private modalService: NgbModal
   ) {
     this.playServices.setPowerOn(true);
-
   }
 
   private animateRuleta = false;

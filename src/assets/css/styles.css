@@ -77,7 +77,8 @@ section {
   height: 90vh;
   align-content: center;
 }
-.row.condiciones{
+
+.row.condiciones {
   height: auto;
 }
 
@@ -113,6 +114,7 @@ input {
   display: flex;
   align-items: center;
 }
+
 .content.premio {
   height: 95%;
 }
@@ -133,7 +135,7 @@ input {
 
 /*fondos*/
 .logo-5b {
-  display: inline-block!;
+  display: inline-block !;
   width: auto;
   left: 1%;
   z-index: 97;
@@ -267,6 +269,7 @@ input {
   width: 125%;
   object-fit: contain;
 }
+
 .ruleta-glow .perdio {
   width: 95%;
   object-fit: contain;
@@ -705,7 +708,7 @@ input {
   width: auto;
   height: 85%;
   max-height: 88vh;
-  margin:  auto;
+  margin: auto;
 }
 
 @media only screen and (max-width: 600px) {
@@ -807,10 +810,12 @@ input {
   width: 90%;
   /* Could be more or less, depending on screen size */
 }
+
 .modal-body.premio {
   width: 88%;
   max-height: 88vh;
 }
+
 /* The Close Button */
 .close {
   color: rgb(1 33 72);
@@ -846,18 +851,22 @@ input {
   margin: auto;
   width: 100%;
   max-height: 90vh;
-  padding:  10px 0px 10px 0px;
+  padding: 10px 0px 10px 0px;
 }
+
 .center {
   margin-left: auto;
   margin-right: auto;
 }
-.over{
+
+.over {
   display: flex;
 }
+
 .background-on {
   background-image: url(../images/fondo.jpg);
 }
+
 .background-off {
   background-image: url(../images/app-bg.png);
 }

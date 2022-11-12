@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { PlayService } from './../../services/play-service.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,11 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private playServices: PlayService,
+  ) {
+    this.playServices.setPowerOn(false);
+  }
 
   ngOnInit(): void {
   }
@@ -16,7 +21,7 @@ export class HomeComponent implements OnInit {
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
-    autoplay:true,
+    autoplay: true,
     touchDrag: true,
     pullDrag: false,
     dots: false,

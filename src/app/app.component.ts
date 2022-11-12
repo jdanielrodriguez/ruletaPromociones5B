@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PlayService } from './services/play-service.service';
 @Component({
   selector: 'app-root',
@@ -12,7 +12,7 @@ export class AppComponent {
   constructor(
     private modalService: NgbModal,
     private playService: PlayService
-    ) { }
+  ) { }
 
   open(content: any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', fullscreen: 'modal-fullscreen-xl-down' }).result.then(
