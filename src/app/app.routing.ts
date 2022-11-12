@@ -11,14 +11,14 @@ import { CondicionesComponent } from './components/condiciones/condiciones.compo
 
 //Array de rutas
 const appRoutes: Routes = [
-    {path: '', component: HomeComponent},
-    {path: 'home', component: HomeComponent},
-    {path: 'registro', component: FormularioComponent},
-    {path: 'ruleta/:move_id', component: RuletaComponent},
-    {path: 'ganador', component: WinnerComponent},
-    {path: 'condiciones', component: CondicionesComponent}
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'registro', component: FormularioComponent },
+  { path: 'ruleta/:move_id', component: RuletaComponent },
+  { path: 'ganador', component: WinnerComponent },
+  { path: 'condiciones', component: CondicionesComponent }
 ];
 
 // exportar el modulo de rutas
 export const appRoutingProviders: any[] = [];
-export const routing: ModuleWithProviders<any> = RouterModule.forRoot(appRoutes);
+export const routing: ModuleWithProviders<any> = RouterModule.forRoot(appRoutes, { scrollPositionRestoration: 'enabled', useHash: true });

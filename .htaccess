@@ -1,12 +1,6 @@
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteCond %{SERVER_PORT} 80
-  RewriteRule ^(.*)$ https://promociones5b.com/$1 [R=301,L]
-  RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . index.html [L]
-</IfModule>
-
-
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
