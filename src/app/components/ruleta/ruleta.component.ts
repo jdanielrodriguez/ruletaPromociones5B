@@ -5,7 +5,7 @@ import { PlayService } from './../../services/play-service.service';
 @Component({
   selector: 'app-ruleta',
   templateUrl: './ruleta.component.html',
-  styleUrls: ['./ruleta.component.css']
+  styleUrls: []
 })
 export class RuletaComponent implements OnInit {
   closeResult = '';
