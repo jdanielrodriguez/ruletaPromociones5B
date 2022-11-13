@@ -704,16 +704,16 @@ input {
   color: #ffdd40;
 }
 
-.img_container>div>img {
+.img_container>app-gracias>.content.premio>div>img {
   width: auto;
-  height: 85%;
-  max-height: 88vh;
+  height: 80%;
+  max-height: 80vh;
   margin: auto;
 }
 
 @media only screen and (max-width: 600px) {
 
-  .img_container>div>img {
+  .img_container>app-gracias>.content.premio>div>img {
     width: 88%;
     height: auto;
     margin-left: auto;
@@ -841,12 +841,11 @@ input {
 .img_container {
   width: 100%;
   height: auto;
-  display: flex;
   align-content: space-between;
   height: 100%;
 }
 
-.img_container>div {
+.img_container>app-gracias>.content.premio>div {
   display: flex;
   margin: auto;
   width: 100%;
