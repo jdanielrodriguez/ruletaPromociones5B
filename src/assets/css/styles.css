@@ -142,11 +142,14 @@ input {
 }
 
 .condiciones-btn {
-  display: inline-block !important;
-  width: auto;
-  margin-left: auto;
-  right: 1%;
   z-index: 4;
+  height: 47px;
+  line-height: 0;
+  margin: 15px auto;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 20px !important;
 }
 
 .estadio-template {
@@ -181,6 +184,11 @@ input {
   transition: 200ms;
 }
 
+.btn-1:focus {
+  outline: none;
+}
+
+
 .btn-1:hover {
   transform: scale(1.1);
 }
@@ -202,9 +210,27 @@ input {
   transition: 200ms;
 }
 
+.btn-2:focus {
+  outline: none;
+}
+
+
 .btn-2:hover {
   background-color: #ffe364 !important;
 }
+
+.modal-btn {
+  position: relative;
+  border: solid 0px !important;
+  font-weight: 700;
+  margin: 0 0 0 0;
+  bottom: -37px;
+}
+
+.modal-btn:focus {
+  outline: none;
+}
+
 
 /*home*/
 .logo-section {
@@ -670,8 +696,59 @@ input {
   background-image: url(../images/fondo-2.jpg);
   background-color: rgba(0, 24, 115, 0.5);
   border-radius: 15px;
-  background-position: center top;
-  background-size: cover;
+  background-position: center -293px;
+  background-size: 1920px;
+  background-color: #010a31;
+  background-repeat: no-repeat;
+}
+
+.estadio-fondo-2 .row {
+  width: 100%;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  height: unset !important;
+  align-content: center;
+}
+
+.estadio-fondo-2 .logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.estadio-fondo-2 .logo-promo {
+  max-width: 799px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.estadio-fondo-2 .logo-promo img {
+  width: 80%;
+  object-fit: contain;
+}
+
+.estadio-fondo-2 .ruleta-glow img {
+  width: 70%;
+  object-fit: contain;
+}
+
+.estadio-fondo-2 .glow-ruleta-home {
+  z-index: 0;
+  order: 1;
+  mix-blend-mode: screen;
+  width: 100% !important;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 21px;
+  right: 0;
+  text-align: center;
+  top: -12%;
 }
 
 .condiciones-cont {
@@ -711,10 +788,96 @@ input {
   margin: auto;
 }
 
+.img_container {
+  width: 50%;
+  height: auto;
+  display: flex;
+}
+
+.modal_container {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.row-modal {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.row-modal .condiciones-cont {
+  color: white;
+  max-width: 1250px;
+  padding: 0;
+  width: 50%;
+}
+
+.row-modal .ruleta-premios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 -20px 0 0;
+  width: 50%;
+}
+
+.img_container>div>img {
+  /*width: auto;
+  height: 85%;
+  max-height: 88vh;
+  margin: auto;*/
+  height: 100%;
+  object-fit: contain;
+  max-width: 430px;
+  max-height: 100%;
+  width: 100%;
+}
+
+.modal-ruleta {
+  width: 50%;
+  object-fit: contain;
+}
+
 @media only screen and (max-width: 600px) {
 
   .img_container>app-gracias>.content.premio>div>img {
     width: 88%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .row-modal .condiciones-cont {
+    color: white;
+    max-width: 1250px;
+    padding: 0;
+    width: 100%;
+  }
+
+  .row-modal .ruleta-premios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 -20px 0 0;
+    width: 100%;
+  }
+
+  .modal-ruleta {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .img_container {
+    width: 100%;
+    height: auto;
+    display: flex;
+  }
+
+  .img_container>div>img {
+    width: 100%;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -744,6 +907,15 @@ input {
     font-family: 'visby_cfbold';
     color: white;
     font-size: 15px;
+  }
+
+  .estadio-fondo-2 .logo-promo {
+    max-width: 799px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0 0 0;
   }
 }
 
@@ -812,8 +984,26 @@ input {
 }
 
 .modal-body.premio {
-  width: 88%;
-  max-height: 88vh;
+  width: 60%;
+  background-color: transparent;
+  background-size: 100% 100%;
+  padding: 70px;
+  border: solid 0px;
+  /*min-height: 45vh;*/
+  background-image: url(../images/fondo-modal.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.modal-dialog {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* The Close Button */
@@ -829,15 +1019,18 @@ input {
   background-color: #ffcf00;
   border-radius: 50px;
   padding: 0 15px;
+  transition: 300ms;
 }
 
 .close:hover,
 .close:focus {
-  color: #ffffff;
+  color: #ffcf00;
   text-decoration: none;
   cursor: pointer;
+  background-color: rgb(1 33 72);
 }
 
+/*
 .img_container {
   width: 100%;
   height: auto;
@@ -851,7 +1044,7 @@ input {
   width: 100%;
   max-height: 90vh;
   padding: 10px 0px 10px 0px;
-}
+} */
 
 .center {
   margin-left: auto;
@@ -868,4 +1061,15 @@ input {
 
 .background-off {
   background-image: url(../images/app-bg.png);
+}
+
+.condiciones-modal {
+  padding: 0;
+  width: 90vw;
+  margin: 35px auto 100px auto;
+}
+
+.condiciones-modal .close {
+  right: 5.5%;
+  top: 5.5%;
 }
