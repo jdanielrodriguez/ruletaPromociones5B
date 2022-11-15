@@ -45,7 +45,6 @@ export class RuletaComponent implements OnInit {
           this.setAnimateFast();
           setTimeout(() => {
             this.setAnimateFast();
-            console.log(response);
             this._response = response;
             this.open(this._customTemplate)
           }, 5000)

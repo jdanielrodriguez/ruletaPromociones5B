@@ -22,6 +22,7 @@
   <div class="modal-body premio" *ngIf="premio">
     <div class="img_container">
       <app-gracias *ngIf="premio.winObj" [imgUrl]="premio.winObj.img"></app-gracias>
+      <app-gracias *ngIf="!premio.winObj"></app-gracias>
     </div>
   </div>
   <div class="modal-body premio" *ngIf="!premio">
