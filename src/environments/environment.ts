@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlBase: 'https://promociones5b.com/backend/public/index.php',
+  urlBase: 'http://localhost',
   token: 'TOKEN'
 };
 

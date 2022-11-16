@@ -184,7 +184,9 @@ input {
   transition: 200ms;
 }
 
-.btn-1:focus {outline:none;}
+.btn-1:focus {
+  outline: none;
+}
 
 
 .btn-1:hover {
@@ -207,14 +209,17 @@ input {
   cursor: pointer;
   transition: 200ms;
 }
-.btn-2:focus {outline:none;}
+
+.btn-2:focus {
+  outline: none;
+}
 
 
 .btn-2:hover {
   background-color: #ffe364 !important;
 }
 
-.modal-btn{
+.modal-btn {
   position: relative;
   border: solid 0px !important;
   font-weight: 700;
@@ -222,7 +227,9 @@ input {
   bottom: -37px;
 }
 
-.modal-btn:focus {outline:none;}
+.modal-btn:focus {
+  outline: none;
+}
 
 
 /*home*/
@@ -774,20 +781,27 @@ input {
   color: #ffdd40;
 }
 
+.img_container>app-gracias>.content.premio>div>img {
+  width: auto;
+  height: 80%;
+  max-height: 80vh;
+  margin: auto;
+}
+
 .img_container {
   width: 50%;
   height: auto;
   display: flex;
 }
 
-.modal_container{
+.modal_container {
   display: flex;
   width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.row-modal{
+.row-modal {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -821,12 +835,20 @@ input {
   max-height: 100%;
   width: 100%;
 }
-.modal-ruleta{
+
+.modal-ruleta {
   width: 50%;
   object-fit: contain;
 }
 
 @media only screen and (max-width: 600px) {
+
+  .img_container>app-gracias>.content.premio>div>img {
+    width: 88%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .row-modal .condiciones-cont {
     color: white;
@@ -834,7 +856,7 @@ input {
     padding: 0;
     width: 100%;
   }
-  
+
   .row-modal .ruleta-premios {
     display: flex;
     flex-direction: column;
@@ -843,7 +865,7 @@ input {
     width: 100%;
   }
 
-  .modal-ruleta{
+  .modal-ruleta {
     width: 100%;
     object-fit: contain;
   }
@@ -886,6 +908,7 @@ input {
     color: white;
     font-size: 15px;
   }
+
   .estadio-fondo-2 .logo-promo {
     max-width: 799px;
     width: 100%;
@@ -893,7 +916,7 @@ input {
     flex-direction: column;
     align-items: center;
     margin: 50px 0 0 0;
-}
+  }
 }
 
 /* The Modal (background) */
@@ -976,7 +999,7 @@ input {
   position: relative;
 }
 
-.modal-dialog{
+.modal-dialog {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -1007,13 +1030,21 @@ input {
   background-color: rgb(1 33 72);
 }
 
-.img_container>div {
- /* display: flex;
+/*
+.img_container {
+  width: 100%;
+  height: auto;
+  align-content: space-between;
+  height: 100%;
+}
+
+.img_container>app-gracias>.content.premio>div {
+  display: flex;
   margin: auto;
   width: 100%;
   max-height: 90vh;
-  padding: 10px 0px 10px 0px;*/
-}
+  padding: 10px 0px 10px 0px;
+} */
 
 .center {
   margin-left: auto;
@@ -1035,8 +1066,9 @@ input {
 .condiciones-modal {
   padding: 0;
   width: 90vw;
-  margin: 35px auto 100px auto; 
+  margin: 35px auto 100px auto;
 }
+
 .condiciones-modal .close {
   right: 5.5%;
   top: 5.5%;
