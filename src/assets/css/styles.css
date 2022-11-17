@@ -224,7 +224,7 @@ input {
   border: solid 0px !important;
   font-weight: 700;
   margin: 0 0 0 0;
-  bottom: -37px;
+  bottom: 24px;
 }
 
 .modal-btn:focus {
@@ -596,7 +596,8 @@ input {
   animation-timing-function: linear;
 }
 
-.ruleta.animate_fast, .ruleta-luces.animate_fast {
+.ruleta.animate_fast,
+.ruleta-luces.animate_fast {
   animation: spin 5000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -841,6 +842,32 @@ input {
   object-fit: contain;
 }
 
+.premio-texto {
+  width: 50%;
+  display: flex;
+}
+
+.premio-texto img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.premio-imagen {
+  width: 50%;
+  display: flex;
+}
+
+.premio-imagen img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.modal-content {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 @media only screen and (max-width: 1700px) {
 
   .modal-body.premio .top-titulo {
@@ -922,6 +949,22 @@ input {
 }
 
 @media only screen and (max-width: 600px) {
+
+  .premio-imagen {
+    width: 100%;
+    display: flex;
+  }
+
+  .premio-texto {
+    width: 100%;
+    display: flex;
+  }
+
+  .premio-texto img {
+    width: 100%;
+    object-fit: contain;
+    margin: 50px 0 15px 0;
+  }
 
   .modal-body.premio .top-titulo {
     font-size: 50px;
@@ -1095,7 +1138,7 @@ input {
   width: 60%;
   background-color: transparent;
   background-size: 100% 100%;
-  padding: 70px;
+  padding: 0 70px;
   border: solid 0px;
   /*min-height: 45vh;*/
   background-image: url(../images/fondo-modal.png);

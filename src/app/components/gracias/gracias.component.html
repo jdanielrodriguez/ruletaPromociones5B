@@ -1,23 +1,36 @@
 <section class="content premio">
-  <div class="row-modal ps-20 a-center j-center" *ngIf="imgUrl === ''">
-      <div class="logo-section a-center condiciones-cont">
-          <div class="logo-promo">
-            <h1><span class="top-titulo texto-amarillo">SIGUE</span><br>PARTICIPANDO</h1>
-          </div>
+  <div class="row-modal a-center j-center" *ngIf="imgUrl === ''">
+    <div class="premio-texto">
+      <img src="../../../assets/images/premios/texto-sigue-participando.png" alt="">
+    </div>
+    <div class="ruleta-premios">
+      <div class="ruleta-glow">
+        <img class="ruleta-home perdio" src="../../../assets/images/ruleta-login.png" alt="">
+        <img class="glow-ruleta-home perdio" src="../../../assets/images/luces.png" alt="">
       </div>
-      <div class="ruleta-premios">
-          <div class="ruleta-glow">
-              <img class="ruleta-home perdio" src="../../../assets/images/ruleta-login.png" alt="">
-              <img class="glow-ruleta-home perdio" src="../../../assets/images/luces.png" alt="">
-          </div>
-      </div>
+    </div>
   </div>
   <div class="a-center j-center" *ngIf="imgUrl !== ''">
     <img [src]="imgUrl" alt="">
   </div>
   <!-- Opcion 3 Repechaje -->
-  <!-- <div class="a-center j-center" *ngIf="imgUrl !== ''">
-    <img [src]="imgUrl" alt="">
-  </div> -->
+  <div class="row-modal a-center j-center" *ngIf="imgUrl !== ''">
+    <div class="premio-texto">
+      <img src="../../../assets/images/premios/texto-repechaje.png" alt="">
+    </div>
+    <div class="premio-imagen">
+      <img src="../../../assets/images/premios/repechaje.png" alt="">
+    </div>
+  </div>
+    <!-- Opcion 4 Tarjeta Roja -->
+    <div class="row-modal a-center j-center" *ngIf="imgUrl !== ''">
+      <div class="premio-texto">
+        <img src="../../../assets/images/premios/tarjeta-roja.png" alt="">
+      </div>
+      <div class="premio-imagen">
+        <img src="../../../assets/images/premios/tarjetaroja.png" alt="">
+      </div>
+    </div>
 </section>
-<a (click)="volverAJugar()" class="btn-2 center modal-btn">{{imgUrl === '' ? 'Volver a Jugar' : 'Continuar Jugando'}}</a>
+<a (click)="volverAJugar()" class="btn-2 center modal-btn">{{imgUrl === '' ? 'Volver a Jugar' : 'Continuar
+  Jugando'}}</a>
