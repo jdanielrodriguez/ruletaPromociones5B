@@ -73,4 +73,8 @@ export class FormularioComponent implements OnInit {
     })
   }
 
+  setImgUrl(value: string){
+    this.user.file = value;
+  }
+
 }
