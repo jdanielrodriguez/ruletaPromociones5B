@@ -7,28 +7,60 @@
     </div>
     <form class="formulario" #userForm="ngForm" (ngSubmit)="onSubmit()">
       <div class="form-group2">
-        <input type="text" name="nombre" placeholder="Nombre completo" #nombre="ngModel"
-          [ngModelOptions]="{standalone: true}" [(ngModel)]="user.nombre" required #dpi="ngModel">
-        <input type="text" name="dpi" placeholder="DPI" [ngModelOptions]="{standalone: true}" [(ngModel)]="user.dpi"
-          required>
+        <div class="input-group">
+          <div>
+            <input type="text" name="nombre" placeholder="Nombre completo" #nombre="ngModel"
+              [ngModelOptions]="{standalone: true}" [(ngModel)]="user.nombre" required>
+            <small class="error-msg" *ngIf="!nombre.valid && nombre.touched">El nombre no es válido</small>
+          </div>
+        </div>
+        <div class="input-group">
+          <div>
+            <input type="text" name="dpi" placeholder="DPI" [ngModelOptions]="{standalone: true}" #dpi="ngModel"
+              [(ngModel)]="user.dpi" required>
+            <small class="error-msg" *ngIf="!dpi.valid && dpi.touched">El DPI no es válido</small>
+          </div>
+
+        </div>
       </div>
       <div class="form-group">
-        <input type="text" name="correo" placeholder="Correo Electrónico" #correo="ngModel"
-          [ngModelOptions]="{standalone: true}" [(ngModel)]="user.correo" required>
+        <div class="input-group">
+          <input type="text" name="correo" placeholder="Correo Electrónico" #correo="ngModel"
+            [ngModelOptions]="{standalone: true}" [(ngModel)]="user.correo" required>
+        </div>
+        <small class="error-msg" *ngIf="!correo.valid && correo.touched">El correo no es válido</small>
       </div>
       <div class="form-group2">
-        <input type="text" name="telefono" placeholder="Teléfono" #telefono="ngModel"
-          [ngModelOptions]="{standalone: true}" [(ngModel)]="user.telefono" required>
-        <input type="text" name="autorizacion" placeholder="Autorización (AUTH)" #autorizacion="ngModel"
-          [ngModelOptions]="{standalone: true}" [(ngModel)]="user.autorizacion" required>
+        <div class="input-group">
+          <div>
+            <input type="text" name="telefono" placeholder="Teléfono" #telefono="ngModel"
+              [ngModelOptions]="{standalone: true}" [(ngModel)]="user.telefono" required>
+            <small class="error-msg" *ngIf="!telefono.valid && telefono.touched">El teléfono no es válido</small>
+          </div>
+        </div>
+        <div class="input-group">
+          <div>
+            <input type="text" name="autorizacion" placeholder="Autorización (AUTH)" #autorizacion="ngModel"
+              [ngModelOptions]="{standalone: true}" [(ngModel)]="user.autorizacion" required>
+            <small class="error-msg" *ngIf="!autorizacion.valid && autorizacion.touched">El (AUTH) no es válido</small>
+          </div>
+        </div>
       </div>
       <div class="form-group2">
-        <select [(ngModel)]="user.departamento" [ngModelOptions]="{standalone: true}">
-          <option disabled value="0">Seleccione su Departamento</option>
-          <option *ngFor="let item of deparments" [value]="item.id">{{item.name}}</option>
-        </select>
-        <input type="text" name="cajero" placeholder="CAJERO (ATM)" #cajero="ngModel"
-          [ngModelOptions]="{standalone: true}" [(ngModel)]="user.cajero">
+        <div class="input-group">
+          <div>
+            <select [(ngModel)]="user.departamento" [ngModelOptions]="{standalone: true}">
+              <option disabled value="0">Seleccione su Departamento</option>
+              <option *ngFor="let item of deparments" [value]="item.id">{{item.name}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="input-group">
+          <div>
+            <input type="text" name="cajero" placeholder="CAJERO (ATM)" #cajero="ngModel"
+              [ngModelOptions]="{standalone: true}" [(ngModel)]="user.cajero">
+          </div>
+        </div>
       </div>
       <div class="form-group2">
         <div class="custom-input-file col-md-12 col-sm-12 col-xs-12">
@@ -39,11 +71,6 @@
         <input type="submit" value="Entrar" class="btn-2" [disabled]="userForm.invalid">
       </div>
 
-      <small class="error-msg" *ngIf="!nombre.valid && nombre.touched">El nombre no es válido</small>
-      <small class="error-msg" *ngIf="!dpi.valid && dpi.touched">El DPI no es válido</small>
-      <small class="error-msg" *ngIf="!correo.valid && correo.touched">El correo no es válido</small>
-      <small class="error-msg" *ngIf="!telefono.valid && telefono.touched">El teléfono no es válido</small>
-      <small class="error-msg" *ngIf="!autorizacion.valid && autorizacion.touched">El (AUTH) no es válido</small>
     </form>
 
   </div>
