@@ -8,7 +8,17 @@ export type userType = {
   telefono: string;
   autorizacion: string;
   cajero: string;
+  departamento: number;
   file?: string;
+}
+type DepartamentType = {
+  code: string,
+  created_at: Date,
+  created_by: Date,
+  id: number,
+  name: string,
+  status: number,
+  updated_at: string
 }
 @Component({
   selector: 'app-formulario',
@@ -17,7 +27,7 @@ export type userType = {
 })
 export class FormularioComponent implements OnInit {
   public user: userType;
-
+  private _departments: DepartamentType[] = [];
   constructor(
     private router: Router,
     private playServices: PlayService
@@ -31,16 +41,33 @@ export class FormularioComponent implements OnInit {
       telefono: '',
       autorizacion: '',
       cajero: '',
+      departamento: 0,
       file: ''
     };
   }
 
+  set deparments(value: DepartamentType[]) {
+    this._departments = value;
+  }
+  get deparments() {
+    return this._departments;
+  }
+
   ngOnInit(): void {
+    this.getDepartments();
   }
 
   onSubmit() {
     this.playServices.register(this.user).then((response: any) => {
       this.router.navigate([`./ruleta/${response.obj.move_id}`]);
+    }).catch((error: any) => {
+      console.log(error)
+    })
+  }
+
+  getDepartments() {
+    this.playServices.getDepartaments().then((response: DepartamentType[]) => {
+      this.deparments = response;
     }).catch((error: any) => {
       console.log(error)
     })

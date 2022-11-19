@@ -1,6 +1,7 @@
 .image-container {
-  width: 96%;
+  width: 100%;
   max-width: 960px;
+  height: auto;
   max-height: 300px;
   margin: 0 auto;
   overflow: auto;
@@ -8,10 +9,14 @@
 
 .image-container>.image {
   width: auto;
-  height: 100%;
+  height: 300px;
+  display: flex;
+  max-height: 100%;
 }
 
 .image-container>.image>img {
-  width: 100%;
+  width: auto;
   height: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
