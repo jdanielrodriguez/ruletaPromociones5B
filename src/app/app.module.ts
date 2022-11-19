@@ -14,6 +14,7 @@ import { RuletaComponent } from './components/ruleta/ruleta.component';
 
 import { GraciasComponent } from './components/gracias/gracias.component';
 import { PlayService } from './services/play-service.service';
+import { ImageComponent } from './components/image/image.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PlayService } from './services/play-service.service';
     RuletaComponent,
     CondicionesComponent,
     GraciasComponent,
+    ImageComponent,
   ],
   imports: [
     BrowserModule,

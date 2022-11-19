@@ -1,0 +1,7 @@
+<input *ngIf="!myimage" type="file" class="input-file" (change)="onChange($event)" />
+<span *ngIf="!myimage">Adjuntar archivo <span class="clip-img"></span></span>
+<div *ngIf="myimage" class="image-container">
+  <div class="image">
+    <img [src]="myimage | async" />
+  </div>
+</div>
