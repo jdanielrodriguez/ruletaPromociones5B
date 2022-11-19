@@ -49,16 +49,16 @@
       <div class="form-group2">
         <div class="input-group">
           <div>
-            <select [(ngModel)]="user.departamento" [ngModelOptions]="{standalone: true}">
-              <option disabled value="0">Seleccione su Departamento</option>
-              <option *ngFor="let item of deparments" [value]="item.id">{{item.name}}</option>
-            </select>
+            <input type="text" name="cajero" placeholder="CAJERO (ATM)" #cajero="ngModel"
+              [ngModelOptions]="{standalone: true}" [(ngModel)]="user.cajero">
           </div>
         </div>
         <div class="input-group">
           <div>
-            <input type="text" name="cajero" placeholder="CAJERO (ATM)" #cajero="ngModel"
-              [ngModelOptions]="{standalone: true}" [(ngModel)]="user.cajero">
+            <select [(ngModel)]="user.departamento" [ngModelOptions]="{standalone: true}">
+              <option disabled value="0">Seleccione su Departamento</option>
+              <option *ngFor="let item of deparments" [value]="item.id">{{item.name}}</option>
+            </select>
           </div>
         </div>
       </div>

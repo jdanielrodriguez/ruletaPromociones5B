@@ -13,14 +13,24 @@ export class GraciasComponent implements OnInit {
     private modalService: NgbModal,
     private router: Router,
   ) { }
-  _imgUrl = '';
+  private _imgUrl = '';
+  private _tipeWare = 0;
   @Input()
   set imgUrl(value: string) {
     this._imgUrl = value;
   }
-  get imgUrl(){
+  get imgUrl() {
     return this._imgUrl;
   }
+
+  @Input()
+  set tipeWare(value: number) {
+    this._tipeWare = value;
+  }
+  get tipeWare() {
+    return this._tipeWare;
+  }
+
   ngOnInit(): void {
   }
 

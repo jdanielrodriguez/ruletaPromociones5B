@@ -21,12 +21,15 @@
 <ng-template #winner let-modal>
   <div class="modal-body premio" *ngIf="premio">
     <div class="img_container">
-      <app-gracias *ngIf="premio.winObj" [imgUrl]="premio.winObj.img"></app-gracias>
+      <app-gracias *ngIf="premio.winObj && premio.winObj.repechaje" [imgUrl]="premio.winObj.img"
+        [tipeWare]="premio.winObj.repechaje"></app-gracias>
+      <app-gracias *ngIf="premio.winObj && !premio.winObj.repechaje" [imgUrl]="premio.winObj.img"
+        [tipeWare]="premio.winObj.repechaje"></app-gracias>
       <app-gracias *ngIf="!premio.winObj"></app-gracias>
     </div>
   </div>
   <div class="modal-body premio" *ngIf="!premio">
-    <div class="modal_container">
+    <div class="img_container">
       <div>
         <app-gracias></app-gracias>
       </div>

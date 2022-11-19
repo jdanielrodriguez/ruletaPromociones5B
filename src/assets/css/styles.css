@@ -404,11 +404,13 @@ input, select {
   width: 100%;
   flex-direction: column;
 }
+
 .form-group .input-group {
   display: flex;
   width: 100%;
   flex-direction: row;
 }
+
 .form-group2 {
   width: 100%;
   display: flex;
@@ -441,6 +443,17 @@ input, select {
   border-radius: 10px;
   width: 100%;
   margin: 5px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+input:-webkit-autofill {
+  background-color: #17264a !important;
+  border: solid 4px #ffcf00;
+  color: #ffcf00 !important;
+  background-image: inherit !important;
 }
 
 .formulario input::placeholder, .formulario select::placeholder {
@@ -533,6 +546,7 @@ input, select {
     flex-direction: row;
     flex-wrap: wrap !important;
   }
+
   .form-group2 .input-group {
     width: 100% !important;
   }
@@ -807,7 +821,7 @@ input, select {
 }
 
 .img_container {
-  width: 50%;
+  width: 80%;
   height: auto;
   display: flex;
 }
@@ -824,7 +838,8 @@ input, select {
   display: flex;
   flex-direction: row;
   position: relative;
-  flex-wrap: wrap;
+  padding: auto;
+  height: 80vh;
 }
 
 .row-modal .condiciones-cont {
@@ -870,7 +885,7 @@ input, select {
 }
 
 .premio-imagen {
-  width: 50%;
+  width: 60%;
   display: flex;
 }
 
