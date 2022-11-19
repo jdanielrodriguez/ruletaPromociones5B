@@ -1032,6 +1032,9 @@ input:-webkit-autofill {
     margin-left: auto;
     margin-right: auto;
   }
+  .row-modal {
+    height: 50vh;
+  }
 
   .row-modal .condiciones-cont {
     color: white;
