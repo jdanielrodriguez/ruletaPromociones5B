@@ -244,6 +244,7 @@ input, select {
   flex-direction: column;
   align-items: center;
   margin: 0 -20px 0 0;
+  /*height: 100%;*/
 }
 
 .ruleta-glow {
@@ -270,10 +271,10 @@ input, select {
   position: absolute;
   margin-left: auto;
   margin-right: auto;
-  left: -72px;
+  left: -88px;
   right: 0;
   text-align: center;
-  top: -12%;
+  top: 0;
 }
 
 .logo-promo {
@@ -289,11 +290,13 @@ input, select {
 .ruleta-glow {
   max-width: 1120px;
   width: 100%;
+  height: 100%;
 }
 
 .ruleta-glow img {
-  width: 125%;
+  width: 100%;
   object-fit: contain;
+  max-width: 790px;
 }
 
 .ruleta-glow .perdio {
@@ -323,6 +326,7 @@ input, select {
     flex-direction: column;
     align-items: center;
     margin: 50px -20px 0 -20px;
+    height: auto;
   }
 
   .form-group2 {
@@ -336,12 +340,18 @@ input, select {
     width: 100% !important;
   }
 }
-
-.logos-inicio {
-  position: absolute;
+.logos-patro-container{
+  position: fixed;
   width: 100%;
   z-index: 10;
   bottom: 0;
+  padding: 0 50px;
+  background: white;
+  
+}
+.logos-inicio {
+  max-width: 60vw;
+  margin: 0 auto;
 }
 
 /*formulario*/
@@ -372,12 +382,15 @@ input, select {
 
 .error-msg {
   display: block;
-  background-color: #2c0000;
-  color: #ff0000;
+  background-color: #b30000;
+  color: #ffffff;
   padding: 5px;
-  width: 96%;
-  border: solid 1px red;
-  margin: 5px 0 0 0;
+  width: 100%;
+  border: solid 0px #17264a;
+  margin: 5px auto 0 auto;
+  font-size: 17px;
+  font-family: sans-serif;
+  text-align: center;
 }
 
 .img-reg {
@@ -409,17 +422,20 @@ input, select {
   display: flex;
   width: 100%;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .form-group2 {
   width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .form-group2 .input-group {
-  width: 50%;
+  width: 49%;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .form-group2 .input-group .error-msg {
@@ -429,6 +445,7 @@ input, select {
 .form-group2 .input-group>input, .form-group2 .input-group>select {
   width: 100%;
   display: block;
+  height: fit-content;
 }
 
 .formulario input, .formulario select {
@@ -442,7 +459,7 @@ input, select {
   background-color: #17264a;
   border-radius: 10px;
   width: 100%;
-  margin: 5px;
+  margin: 15px 0 0 0;
 }
 
 input:-webkit-autofill,
@@ -482,7 +499,7 @@ input:-webkit-autofill {
   background-color: #17264a;
   border-radius: 10px;
   width: 100%;
-  margin: 5px;
+  margin: 15px 0 0 0;
 }
 
 .clip-img {
@@ -509,7 +526,31 @@ input:-webkit-autofill {
   top: -1000px;
 }
 
+@media only screen and (max-width: 1444px) {
+
+  .logos-patro-container{
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    bottom: 0;
+    padding: 0 50px;
+    background: white;
+    
+  }
+  .logos-inicio {
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+
+}
+
 @media only screen and (max-width: 600px) {
+
+  .logos-inicio {
+    max-width: 100vw;
+    margin: 0 auto;
+  }
+
   .form-content {
     width: 100%;
     height: 100%;
@@ -1049,6 +1090,7 @@ input:-webkit-autofill {
     flex-direction: column;
     align-items: center;
     width: 100%;
+
   }
 
   .modal-ruleta {

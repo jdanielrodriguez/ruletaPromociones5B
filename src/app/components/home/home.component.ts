@@ -29,13 +29,13 @@ export class HomeComponent implements OnInit {
     navText: ['', ''],
     responsive: {
       0: {
-        items: 3
+        items: 4
       },
       400: {
-        items: 3
+        items: 4
       },
       740: {
-        items: 4
+        items: 6
       },
       940: {
         items: 7
