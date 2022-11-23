@@ -1,0 +1,31 @@
+<section class="content">
+    <div class="row ps-20 a-center j-center wrap login">
+      <img class="glow-form-bg" src="../../../assets/images/glow.png" alt="">
+      <div class="form-logo">
+        <a [routerLink]="['/']"><img class="img-logo" src="../../../assets/images/logo-jugada.png" alt=""></a>
+        <h1 class="title">INICIAR SESIÓN</h1>
+      </div>
+      <form class="formulario" #userForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <div class="input-group">
+              <input type="text" name="nombre" placeholder="Usuario" #nombre="ngModel"
+                [ngModelOptions]="{standalone: true}" [(ngModel)]="user.nombre" required>
+              <small class="error-msg" *ngIf="!nombre.valid && nombre.touched">El Usuario no es válido</small>
+          </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <input type="password" name="dpi" placeholder="Contraseña" [ngModelOptions]="{standalone: true}" #dpi="ngModel"
+                  [(ngModel)]="user.dpi" required>
+                <small class="error-msg" *ngIf="!dpi.valid && dpi.touched">La contraseña no válida</small>
+            </div>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Entrar" class="btn-2" [disabled]="userForm.invalid">
+        </div>
+        <a [routerLink]="['/reset']" class="normal-link">Cambiar contraseña</a>
+      </form>
+
+    </div>
+  </section>
+  

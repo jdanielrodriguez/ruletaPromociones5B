@@ -15,6 +15,8 @@ import { RuletaComponent } from './components/ruleta/ruleta.component';
 import { GraciasComponent } from './components/gracias/gracias.component';
 import { PlayService } from './services/play-service.service';
 import { ImageComponent } from './components/image/image.component';
+import { LoginComponent } from './components/login/login.component';
+import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { ImageComponent } from './components/image/image.component';
     CondicionesComponent,
     GraciasComponent,
     ImageComponent,
+    LoginComponent,
+    ResetpasswordComponent,
   ],
   imports: [
     BrowserModule,
