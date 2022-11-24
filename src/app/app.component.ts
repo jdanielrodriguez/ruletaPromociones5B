@@ -9,6 +9,12 @@ import { PlayService } from './services/play-service.service';
 export class AppComponent {
   title = 'ruleta5b';
   closeResult = '';
+  public options = {
+    timeOut: 3000,
+    showProgressBar: true,
+    pauseOnHover: false,
+    clickToClose: true,
+  }
   constructor(
     private modalService: NgbModal,
     private playService: PlayService

@@ -1,7 +1,7 @@
-<input *ngIf="!mainImage" type="file" class="input-file" (change)="onChange($event)" />
-<span *ngIf="!mainImage">Adjuntar archivo <span class="clip-img"></span></span>
+<input *ngIf="fileUrl === ''" type="file" class="input-file" (change)="onChange($event)" />
+<span *ngIf="fileUrl === ''">Adjuntar archivo <span class="clip-img"></span></span>
 <div *ngIf="mainImage" class="image-container">
   <div class="image">
-    <img [src]="mainImage | async" />
+    <img [src]="mainImage | async" (click)="resetImg()"/>
   </div>
 </div>
