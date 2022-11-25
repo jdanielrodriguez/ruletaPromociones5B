@@ -814,8 +814,6 @@ input:-webkit-autofill {
 .estadio-fondo-2 .logo-promo img {
   width: 80%;
   object-fit: contain;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .estadio-fondo-2 .ruleta-glow img {
