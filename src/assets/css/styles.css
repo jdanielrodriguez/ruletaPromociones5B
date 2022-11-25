@@ -1338,3 +1338,7 @@ input:-webkit-autofill {
     margin: 0;
 }
 }
+
+simple-notifications{
+  display: none;
+}
