@@ -342,15 +342,17 @@ input, select {
     width: 100% !important;
   }
 }
-.logos-patro-container{
+
+.logos-patro-container {
   position: fixed;
   width: 100%;
   z-index: 10;
   bottom: 0;
   padding: 0 50px;
   background: white;
-  
+
 }
+
 .logos-inicio {
   max-width: 60vw;
   margin: 0 auto;
@@ -398,6 +400,12 @@ input, select {
 .img-reg {
   width: 100%;
   max-width: 424px;
+}
+
+.img-reg-info {
+  width: 100%;
+  max-width: 424px;
+  margin-top: 25px;
 }
 
 .img-logo {
@@ -511,7 +519,7 @@ input:-webkit-autofill {
   display: block;
   position: absolute;
   top: 5px;
-  left: 170px;
+  left: 250px;
   background-size: contain;
 }
 
@@ -530,15 +538,16 @@ input:-webkit-autofill {
 
 @media only screen and (max-width: 1444px) {
 
-  .logos-patro-container{
+  .logos-patro-container {
     position: fixed;
     width: 100%;
     z-index: 10;
     bottom: 0;
     padding: 0 50px;
     background: white;
-    
+
   }
+
   .logos-inicio {
     max-width: 80vw;
     margin: 0 auto;
@@ -805,6 +814,8 @@ input:-webkit-autofill {
 .estadio-fondo-2 .logo-promo img {
   width: 80%;
   object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .estadio-fondo-2 .ruleta-glow img {
@@ -866,7 +877,6 @@ input:-webkit-autofill {
 .img_container {
   width: 80%;
   height: auto;
-  display: flex;
 }
 
 .modal_container {
@@ -1024,7 +1034,7 @@ input:-webkit-autofill {
 }
 
 @media only screen and (max-width: 600px) {
-  
+
 
   .premio-imagen {
     width: 100%;
@@ -1076,6 +1086,7 @@ input:-webkit-autofill {
     margin-left: auto;
     margin-right: auto;
   }
+
   .row-modal {
     height: 50vh;
   }
@@ -1303,13 +1314,12 @@ input:-webkit-autofill {
   right: 5.5%;
   top: 5.5%;
 }
+
 /*LOGIN*/
 
-.login{
+.login {}
 
-}
-
-.title{
+.title {
   font-family: 'abraham_stampstamp';
   color: white;
   font-size: 100px;
@@ -1319,7 +1329,7 @@ input:-webkit-autofill {
   margin: 0;
 }
 
-.normal-link{
+.normal-link {
   color: #17264a;
   font-size: 25px;
   font-family: 'visby_cfbold';
@@ -1336,5 +1346,5 @@ input:-webkit-autofill {
     text-align: center;
     line-height: 56px;
     margin: 0;
-}
+  }
 }

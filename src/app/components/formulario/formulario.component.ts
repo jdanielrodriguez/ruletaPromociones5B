@@ -66,11 +66,21 @@ export class FormularioComponent implements OnInit {
     const validate = this.validateUser();
     if (validate) {
       this.playServices.register(this.user).then((response: any) => {
+        if (response.status === 401) {
+          this.error(response.error.msg);
+          this.blockUI.stop();
+          return;
+        }
         this.success('Registro Completo')
         this.blockUI.stop();
         this.router.navigate([`./ruleta/${response.obj.move_id}`]);
       }).catch((error: any) => {
-        console.log(error);
+        if (error.status === 401) {
+          console.log(error)
+          this.error(error);
+          this.blockUI.stop();
+          return;
+        }
         this.error('Error registrando tu jugada: ' + error);
         this.blockUI.stop();
       })
@@ -120,10 +130,10 @@ export class FormularioComponent implements OnInit {
   getDepartments() {
     this.playServices.getDepartaments().then((response: DepartamentType[]) => {
       this.deparments = response;
-      this.success('Departamentos Cargados con exito');
+      // this.success('Departamentos Cargados con exito');
     }).catch((error: any) => {
       console.log(error)
-      this.error('Error cargando departamento: '+ error);
+      this.error('Error cargando departamento: ' + error);
     })
   }
 
@@ -132,11 +142,11 @@ export class FormularioComponent implements OnInit {
   }
 
   success(text: string) {
-		this._service.success("Exito!", 'Completado: ' + text)
-	}
+    this._service.success("Exito!", 'Completado: ' + text)
+  }
 
   error(text: string) {
-		this._service.error("Error!", 'Error: ' + text)
-	}
+    this._service.error("Error!", 'Error: ' + text)
+  }
 
 }

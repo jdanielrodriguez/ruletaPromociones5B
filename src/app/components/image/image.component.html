@@ -1,5 +1,5 @@
-<input *ngIf="fileUrl === ''" type="file" class="input-file" (change)="onChange($event)" />
-<span *ngIf="fileUrl === ''">Adjuntar archivo <span class="clip-img"></span></span>
+<input id="image" *ngIf="fileUrl === ''" type="file" class="input-file" (change)="onChange($event)" />
+<span for="image" *ngIf="fileUrl === ''">Adjuntar comprobante <span class="clip-img"></span></span>
 <div *ngIf="mainImage" class="image-container">
   <div class="image">
     <img [src]="mainImage | async" (click)="resetImg()"/>

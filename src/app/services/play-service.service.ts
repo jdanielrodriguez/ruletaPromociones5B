@@ -39,7 +39,7 @@ export class PlayService {
         .toPromise();
       return response;
     } catch (error) {
-      return this.handleError(error);
+      return error;
     }
   }
 
@@ -50,7 +50,7 @@ export class PlayService {
         .toPromise();
       return response;
     } catch (error) {
-      return error;
+      return Promise.reject(error);
     }
   }
 

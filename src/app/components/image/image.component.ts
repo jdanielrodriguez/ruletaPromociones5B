@@ -37,8 +37,8 @@ export class ImageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onChange($event: Event) {
-    const fileObj = ($event.target as HTMLInputElement);
+  onChange($event: Event | null) {
+    const fileObj = $event ? ($event.target as HTMLInputElement) : null;
     if (fileObj && fileObj.files) {
       const file = fileObj.files[0];
       this.convertToBase64(file);
