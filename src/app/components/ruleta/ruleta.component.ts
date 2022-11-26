@@ -30,6 +30,7 @@ export class RuletaComponent implements OnInit {
   get premio() {
     return this._response ? this._response.obj : null;
   }
+
   ngOnInit(): void {
     const moveId = this.route.snapshot.params['move_id'];
     if (moveId) {
@@ -45,11 +46,18 @@ export class RuletaComponent implements OnInit {
           this.setAnimateFast();
           setTimeout(() => {
             this.setAnimateFast();
+            if (response.obj) {
+              const winObj = response.obj.winObj;
+              const optObj = response.obj.winOpt;
+              if (winObj && optObj && winObj.use_code) {
+                response.obj.winObj.img = winObj.img + optObj.code;
+              }
+            }
             this._response = response;
             this.open(this._customTemplate)
           }, 5000)
         }).catch((error: any) => {
-          if(error.status === 404){
+          if (error.status === 404) {
             this.setAnimateFast();
             setTimeout(() => {
               this.setAnimateFast();

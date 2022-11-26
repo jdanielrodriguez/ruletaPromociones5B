@@ -108,8 +108,22 @@ export class FormularioComponent implements OnInit {
       this.error('Debe agregar un telefono.');
       response = false;
     }
-    if (!this.user.autorizacion || this.user.autorizacion === '' || this.user.autorizacion.length < 3) {
-      this.error('Debe agregar un Autorización (AUTH).');
+    if (!this.user.autorizacion ||
+        this.user.autorizacion === '' ||
+        this.user.autorizacion.length < 4 ||
+        this.user.autorizacion === '000000' ||
+        this.user.autorizacion === '111111' ||
+        this.user.autorizacion === '222222' ||
+        this.user.autorizacion === '333333' ||
+        this.user.autorizacion === '444444' ||
+        this.user.autorizacion === '555555' ||
+        this.user.autorizacion === '666666' ||
+        this.user.autorizacion === '777777' ||
+        this.user.autorizacion === '888888' ||
+        this.user.autorizacion === '999999' ||
+        this.user.autorizacion === '123456'
+        ) {
+      this.error('Debe agregar un Autorización (AUTH) correcto.');
       response = false;
     }
     if (!this.user.cajero || this.user.cajero === '' || this.user.cajero.length < 3) {
