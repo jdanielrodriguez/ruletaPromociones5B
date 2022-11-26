@@ -29,7 +29,7 @@ export class AppComponent {
         this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
       },
     );
-    console.log(this.closeResult);
+    // console.log(this.closeResult);
   }
 
   close(content: any) {

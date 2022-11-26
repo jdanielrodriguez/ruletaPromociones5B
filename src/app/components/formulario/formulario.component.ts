@@ -71,9 +71,12 @@ export class FormularioComponent implements OnInit {
           this.blockUI.stop();
           return;
         }
-        this.success('Registro Completo')
+        if (response && response.obj) {
+          this.success('Registro Completo')
+          this.blockUI.stop();
+          this.router.navigate([`./ruleta/${response.obj.move_id}`]);
+        }
         this.blockUI.stop();
-        this.router.navigate([`./ruleta/${response.obj.move_id}`]);
       }).catch((error: any) => {
         if (error.status === 401) {
           console.log(error)
@@ -109,20 +112,20 @@ export class FormularioComponent implements OnInit {
       response = false;
     }
     if (!this.user.autorizacion ||
-        this.user.autorizacion === '' ||
-        this.user.autorizacion.length < 4 ||
-        this.user.autorizacion === '000000' ||
-        this.user.autorizacion === '111111' ||
-        this.user.autorizacion === '222222' ||
-        this.user.autorizacion === '333333' ||
-        this.user.autorizacion === '444444' ||
-        this.user.autorizacion === '555555' ||
-        this.user.autorizacion === '666666' ||
-        this.user.autorizacion === '777777' ||
-        this.user.autorizacion === '888888' ||
-        this.user.autorizacion === '999999' ||
-        this.user.autorizacion === '123456'
-        ) {
+      this.user.autorizacion === '' ||
+      this.user.autorizacion.length < 4 ||
+      this.user.autorizacion === '000000' ||
+      this.user.autorizacion === '111111' ||
+      this.user.autorizacion === '222222' ||
+      this.user.autorizacion === '333333' ||
+      this.user.autorizacion === '444444' ||
+      this.user.autorizacion === '555555' ||
+      this.user.autorizacion === '666666' ||
+      this.user.autorizacion === '777777' ||
+      this.user.autorizacion === '888888' ||
+      this.user.autorizacion === '999999' ||
+      this.user.autorizacion === '123456'
+    ) {
       this.error('Debe agregar un Autorización (AUTH) correcto.');
       response = false;
     }

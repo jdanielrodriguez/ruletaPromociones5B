@@ -41,7 +41,7 @@ export class RuletaComponent implements OnInit {
     this.setAnimate();
     if (this.moveId) {
       setTimeout(() => {
-        console.log(this.moveId);
+        // console.log(this.moveId);
         this.playServices.play(this.moveId).then((response: any) => {
           this.setAnimateFast();
           setTimeout(() => {
@@ -80,7 +80,7 @@ export class RuletaComponent implements OnInit {
         this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
       },
     );
-    console.log(this.closeResult);
+    // console.log(this.closeResult);
   }
 
   close(content: any) {

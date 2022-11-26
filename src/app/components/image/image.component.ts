@@ -53,7 +53,7 @@ export class ImageComponent implements OnInit {
 
   readFile(file: File, subscriber: Subscriber<any>) {
     const filereader = new FileReader();
-    console.log(file)
+    // console.log(file)
     if (file.type === 'image/jpeg' || file.type === 'image/jpg' || file.type === 'image/png') {
       filereader.readAsDataURL(file);
       filereader.onload = () => {
