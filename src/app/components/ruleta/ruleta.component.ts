@@ -50,7 +50,7 @@ export class RuletaComponent implements OnInit {
               const winObj = response.obj.winObj;
               const optObj = response.obj.winOpt;
               if (winObj && optObj && winObj.use_code) {
-                response.obj.winObj.img = winObj.img + optObj.code;
+                response.obj.winObj.img = winObj.img + optObj.img;
               }
             }
             this._response = response;
