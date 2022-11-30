@@ -1,5 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from '@angular/core';
+import { Observable } from "rxjs";
+import { DepartamentType } from "../components/formulario/formulario.component";
 import { environment } from './../../environments/environment';
 
 @Injectable({
@@ -43,25 +45,23 @@ export class PlayService {
     }
   }
 
-  async play(id: number): Promise<any> {
+  play(id: number): Observable<any> {
     let url = `${this.basePath}/api/play/${id}`
     try {
-      const response = await this.http.get(url)
-        .toPromise();
+      const response = this.http.get(url)
       return response;
     } catch (error) {
-      return Promise.reject(error);
+      return new Observable((observer) => { observer.error(error); });
     }
   }
 
-  async getDepartaments(): Promise<any> {
+  getDepartaments(): Observable<DepartamentType[]> {
     let url = `${this.basePath}/api/departments`
     try {
-      const response = await this.http.get(url)
-        .toPromise();
+      const response = this.http.get<DepartamentType[]>(url)
       return response;
     } catch (error) {
-      return error;
+      return new Observable((observer) => { observer.error(error); });
     }
   }
 

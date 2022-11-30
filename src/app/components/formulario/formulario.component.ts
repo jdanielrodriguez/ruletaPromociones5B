@@ -13,7 +13,7 @@ export type userType = {
   departamento: number;
   file?: string;
 }
-type DepartamentType = {
+export type DepartamentType = {
   code: string,
   created_at: Date,
   created_by: Date,
@@ -30,6 +30,7 @@ type DepartamentType = {
 export class FormularioComponent implements OnInit {
   public user: userType;
   private _departments: DepartamentType[] = [];
+  private constRequest: number = 0;
   @BlockUI() blockUI!: NgBlockUI;
   constructor(
     private router: Router,
@@ -145,12 +146,19 @@ export class FormularioComponent implements OnInit {
   }
 
   getDepartments() {
-    this.playServices.getDepartaments().then((response: DepartamentType[]) => {
+    this.playServices.getDepartaments().subscribe((response: DepartamentType[]) => {
       this.deparments = response;
       // this.success('Departamentos Cargados con exito');
-    }).catch((error: any) => {
-      console.log(error)
-      this.error('Error cargando departamento: ' + error);
+    },
+    (err) => {
+      console.log(err);
+      if(this.constRequest < 5) {
+        setTimeout(() => {
+          this.constRequest++;
+          this.getDepartments();
+        }, 1000);
+      }
+
     })
   }
 

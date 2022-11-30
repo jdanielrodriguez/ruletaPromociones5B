@@ -42,7 +42,7 @@ export class RuletaComponent implements OnInit {
     if (this.moveId) {
       setTimeout(() => {
         // console.log(this.moveId);
-        this.playServices.play(this.moveId).then((response: any) => {
+        this.playServices.play(this.moveId).subscribe((response: any) => {
           this.setAnimateFast();
           setTimeout(() => {
             this.setAnimateFast();
@@ -56,7 +56,7 @@ export class RuletaComponent implements OnInit {
             this._response = response;
             this.open(this._customTemplate)
           }, 5000)
-        }).catch((error: any) => {
+        }, (error: any) => {
           if (error.status === 404) {
             this.setAnimateFast();
             setTimeout(() => {

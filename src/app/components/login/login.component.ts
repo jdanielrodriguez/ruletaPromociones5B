@@ -66,11 +66,11 @@ export class LoginComponent implements OnInit {
   }
 
   getDepartments() {
-    this.playServices.getDepartaments().then((response: DepartamentType[]) => {
-      this.deparments = response;
-    }).catch((error: any) => {
-      console.log(error)
-    })
+    // this.playServices.getDepartaments().then((response: DepartamentType[]) => {
+    //   this.deparments = response;
+    // }).catch((error: any) => {
+    //   console.log(error)
+    // })
   }
 
   setImgUrl(value: string){
