@@ -638,7 +638,7 @@ input:-webkit-autofill {
 
 .arrow {
   position: absolute;
-  top: 9%;
+  top: 0;
   width: 8%;
   z-index: 3;
 }
@@ -652,12 +652,13 @@ input:-webkit-autofill {
 }
 
 .ruleta {
-  width: 100%;
+  width: 80%;
   z-index: 1;
 }
 
 .ruleta.animate {
   animation: spin 3000ms;
+  width: 80%;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
@@ -671,13 +672,19 @@ input:-webkit-autofill {
 
 .ruleta-luces.animate {
   animation: flickerAnimation 1000ms, spin 3000ms;
+  width: 100%;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
-.ruleta.animate_fast,
-.ruleta-luces.animate_fast {
+.ruleta.animate_fast {
   animation: spin 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.ruleta-luces.animate_fast {
+  width: 100%;
+  animation: flickerAnimation 2000ms, spin 5000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
