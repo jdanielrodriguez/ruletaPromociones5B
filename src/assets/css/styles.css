@@ -652,19 +652,18 @@ input:-webkit-autofill {
 }
 
 .ruleta {
-  width: 80%;
+  width: 100%;
   z-index: 1;
 }
 
 .ruleta.animate {
   animation: spin 3000ms;
-  width: 80%;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
 .ruleta-luces {
-  width: 100%;
+  width: 125%;
   position: absolute;
   mix-blend-mode: screen;
   z-index: 2;
@@ -672,19 +671,18 @@ input:-webkit-autofill {
 
 .ruleta-luces.animate {
   animation: flickerAnimation 1000ms, spin 3000ms;
-  width: 100%;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
 .ruleta.animate_fast {
+  transform: rotate(90deg);
   animation: spin 5000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 .ruleta-luces.animate_fast {
-  width: 100%;
-  animation: flickerAnimation 2000ms, spin 5000ms;
+  animation: flickerAnimation 500ms, spin 5000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
