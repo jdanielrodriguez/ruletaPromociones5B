@@ -838,8 +838,9 @@ input:-webkit-autofill {
 
 .condiciones-cont {
   color: white;
-  max-width: 1250px;
+  max-width: 857px;
   padding: 50px;
+  letter-spacing: 1px;
 }
 
 .condiciones-cont h1 {
@@ -848,18 +849,19 @@ input:-webkit-autofill {
   font-size: 130px;
   font-weight: 100;
   text-align: center;
-  line-height: 90px;
+  line-height: 100px;
   margin: 0;
+  margin-bottom: 30px;
 }
 
 .top-titulo {
-  font-size: 100px;
+  font-size: 80px;
 }
 
 .condiciones-cont p {
   font-family: 'visby_cfbold';
   color: white;
-  font-size: 30px;
+  font-size: 19px;
 }
 
 .texto-amarillo {
