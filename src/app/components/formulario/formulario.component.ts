@@ -66,7 +66,7 @@ export class FormularioComponent implements OnInit {
     this.blockUI.start();
     const validate = this.validateUser();
     if (validate) {
-      this.playServices.register(this.user).then((response: any) => {
+      this.playServices.register(this.user).subscribe((response: any) => {
         if (response.status === 401) {
           this.error(response.error.msg);
           this.blockUI.stop();
@@ -78,10 +78,10 @@ export class FormularioComponent implements OnInit {
           this.router.navigate([`./ruleta/${response.obj.move_id}`]);
         }
         this.blockUI.stop();
-      }).catch((error: any) => {
-        if (error.status === 401) {
+      }, (error: any) => {
+        if (error.status === 401 || error.status === 400 || error.status === 404) {
           console.log(error)
-          this.error(error);
+          this.error(error.error.msg);
           this.blockUI.stop();
           return;
         }

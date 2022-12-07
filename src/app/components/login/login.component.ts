@@ -58,11 +58,11 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.playServices.register(this.user).then((response: any) => {
-      this.router.navigate([`./ruleta/${response.obj.move_id}`]);
-    }).catch((error: any) => {
-      console.log(error)
-    })
+    // this.playServices.register(this.user).then((response: any) => {
+    //   this.router.navigate([`./ruleta/${response.obj.move_id}`]);
+    // }).catch((error: any) => {
+    //   console.log(error)
+    // })
   }
 
   getDepartments() {

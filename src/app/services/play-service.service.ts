@@ -34,14 +34,13 @@ export class PlayService {
     return Promise.reject(error.message || error)
   }
 
-  async register(form: any): Promise<any> {
+  register(form: any): Observable<any> {
     let url = `${this.basePath}/api/register`
     try {
-      const response = await this.http.post(url, form, { headers: this.headers })
-        .toPromise();
+      const response = this.http.post(url, form, { headers: this.headers });
       return response;
     } catch (error) {
-      return error;
+      return new Observable((observer) => { observer.error(error); });
     }
   }
 
